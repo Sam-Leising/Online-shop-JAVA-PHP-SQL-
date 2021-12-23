@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#5F556C</color>
+    <color name="purple_500">#FF7A00</color>
+    <color name="purple_700">#FF0000</color>
+    <color name="teal_200">#FF7A00</color>
+    <color name="teal_700">#0000FF</color>
+    <color name="black">#8888CF</color>
+    <color name="white">#D000FF</color>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="phoneHeader">#000000</color>
+</resources>
