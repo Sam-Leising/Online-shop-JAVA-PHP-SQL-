@@ -44,7 +44,7 @@ public class Product_Add_Activity extends AppCompatActivity {
     Button btn_insert;
     Button btnSelectImage;
 
-    private static final String url="http://192.168.45.216/4210EA/online_shop/Products_php/upload.php";
+    private static final String url="http://"+MainActivity.gobalURL+"/4210EA/online_shop/Products_php/upload.php";
 
 
     @Override
@@ -186,6 +186,7 @@ public class Product_Add_Activity extends AppCompatActivity {
                 price.setText("");
                 photo.setImageResource(R.drawable.ic_launcher_foreground);
                 Toast.makeText(getApplicationContext(),response.toString(),Toast.LENGTH_LONG).show();
+                System.out.println("response:"+response.toString());
             }
         }, new Response.ErrorListener() {
             @Override

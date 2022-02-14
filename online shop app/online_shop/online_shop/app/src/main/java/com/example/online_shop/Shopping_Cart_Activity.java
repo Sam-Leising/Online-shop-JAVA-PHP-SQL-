@@ -39,7 +39,7 @@ public class Shopping_Cart_Activity extends AppCompatActivity {
     ListView listView;
     Shopping_Cart_Adapter adapter;
     public static ArrayList<Product> productArrayList = new ArrayList<>();
-    String url = "http://192.168.45.216/4210EA/online_shop/Shopping_carts_php/retrieve.php";
+    String url = "http://"+MainActivity.gobalURL+"/4210EA/online_shop/Shopping_carts_php/retrieve.php";
     Product product;
     BottomNavigationView bottomNavigationView;
     int Total;
@@ -157,7 +157,7 @@ public class Shopping_Cart_Activity extends AppCompatActivity {
 
     private void deleteData(final String id) {
 
-        StringRequest request = new StringRequest(Request.Method.POST, "http://192.168.45.216/4210EA/online_shop/Shopping_carts_php/delete.php",
+        StringRequest request = new StringRequest(Request.Method.POST, "http://"+MainActivity.gobalURL+"/4210EA/online_shop/Shopping_carts_php/delete.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

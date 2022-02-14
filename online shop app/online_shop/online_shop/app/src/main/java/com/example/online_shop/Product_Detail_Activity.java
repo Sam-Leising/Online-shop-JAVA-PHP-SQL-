@@ -28,7 +28,7 @@ public class Product_Detail_Activity extends AppCompatActivity {
     Button addToCart,btn_buy;
     int position;
 
-    private static final String url="http://192.168.45.216/4210EA/online_shop/Shopping_carts_php/upload.php";
+    private static final String url="http://"+MainActivity.gobalURL+"/4210EA/online_shop/Shopping_carts_php/upload.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

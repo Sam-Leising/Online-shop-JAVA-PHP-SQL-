@@ -23,7 +23,7 @@ public class Login extends AppCompatActivity {
 
     private EditText etEmail, etPassword;
     private String email,password;
-    private String URL = "http://192.168.45.216/4210EA/online_shop/Login_php/login.php";
+    private String URL = "http://"+MainActivity.gobalURL+"/4210EA/online_shop/Login_php/login.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

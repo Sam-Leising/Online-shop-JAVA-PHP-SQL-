@@ -68,12 +68,12 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `title`, `describe`, `price`, `photo`, `owner`, `phone`) VALUES
-(1, 'baby bird', 'Repair Moisturizing | Moisturi', '38', 'http://192.168.242.216/4210EA/online_shop/Products_php/images/a.jpg', 'sam', '12345678'),
-(2, 'Avene Soothing Special Care Mo', 'Moisturize | Whitening | Japan', '48', 'http://192.168.242.216/4210EA/online_shop/Products_php/images/b.jpg', 'sam', '12345678'),
-(3, 'Avene Repair Cream', 'Moisturizing | Moist | Japan', '786', 'http://192.168.242.216/4210EA/online_shop/Products_php/images/c.jpg', 'sam', '12345678'),
-(4, 'Winona Su-Sensitive Moisturizi', 'Moisturizing | Repair the dama', '123', 'http://192.168.242.216/4210EA/online_shop/Products_php/images/d.jpg', 'sam', '12345678'),
-(5, 'OLAY OLAY', 'moisturizing | oil-control', '474', 'http://192.168.242.216/4210EA/online_shop/Products_php/images/e.jpg', 'sam', '12345678'),
-(6, 'Nature Hall Mens Glacier Mois', 'moisturizing', '456', 'http://192.168.242.216/4210EA/online_shop/Products_php/images/f.jpg', 'sam', '12345678');
+(1, 'baby bird', 'Repair Moisturizing | Moisturi', '38', 'http://192.168.150.160/4210EA/online_shop/Products_php/images/a.jpg', 'sam', '12345678'),
+(2, 'Avene Soothing Special Care Mo', 'Moisturize | Whitening | Japan', '48', 'http://192.168.150.160/4210EA/online_shop/Products_php/images/b.jpg', 'sam', '12345678'),
+(3, 'Avene Repair Cream', 'Moisturizing | Moist | Japan', '786', 'http://192.168.150.160/4210EA/online_shop/Products_php/images/c.jpg', 'sam', '12345678'),
+(4, 'Winona Su-Sensitive Moisturizi', 'Moisturizing | Repair the dama', '123', 'http://192.168.150.160/4210EA/online_shop/Products_php/images/d.jpg', 'sam', '12345678'),
+(5, 'OLAY OLAY', 'moisturizing | oil-control', '474', 'http://192.168.150.160/4210EA/online_shop/Products_php/images/e.jpg', 'sam', '12345678'),
+(6, 'Nature Hall Mens Glacier Mois', 'moisturizing', '456', 'http://192.168.150.160/4210EA/online_shop/Products_php/images/f.jpg', 'sam', '12345678');
 
 
 ALTER TABLE `products`

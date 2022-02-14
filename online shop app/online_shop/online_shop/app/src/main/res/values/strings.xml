@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">online_shop</string>
+    <string name="gobal_url">192.168.150.160</string>
 </resources>

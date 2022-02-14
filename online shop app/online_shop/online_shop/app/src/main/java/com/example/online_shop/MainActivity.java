@@ -31,8 +31,9 @@ public class MainActivity extends AppCompatActivity {
 
     ListView listView;
     MyAdapter adapter;
+    public static String gobalURL = "192.168.150.160";
     public static ArrayList<Product> productArrayList = new ArrayList<>();
-    String url = "http://192.168.45.216/4210EA/online_shop/Products_php/retrieve.php";
+    String url = "http://"+MainActivity.gobalURL+"/4210EA/online_shop/Products_php/retrieve.php";
     Product product;
 
     BottomNavigationView bottomNavigationView;

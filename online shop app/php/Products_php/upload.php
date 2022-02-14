@@ -6,12 +6,13 @@ mysqli_select_db($connection,"online_shop");
     // $server_ip = gethostbyname(gethostname());
 	$arp=`arp -a`;
 
-	$server_ip = substr($arp , 12 , 15);
+	$server_ip = substr($arp , 69 , 15);
     $upload_url='http://'.$server_ip.'/4210EA/online_shop/Products_php/images/';
 
 	
 
 	// echo $arp;
+	// echo $upload_url;
     
 	   $title=$_POST['title'];
 	   $describe=$_POST['describe'];

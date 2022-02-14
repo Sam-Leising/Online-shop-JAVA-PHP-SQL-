@@ -32,7 +32,7 @@ public class Product_Buy_Activity extends AppCompatActivity {
     TextView buyer_Name, buyer_Phone, buyer_Location;
     Button order_upload;
 
-    private static final String url="http://192.168.45.216/4210EA/online_shop/Shopping_carts_php/order.php";
+    private static final String url="http://"+MainActivity.gobalURL+"/4210EA/online_shop/Shopping_carts_php/order.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
