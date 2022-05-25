@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     ListView listView;
     MyAdapter adapter;
-    public static String gobalURL = "192.168.150.160";
+    public static String gobalURL = "192.168.166.160";
     public static ArrayList<Product> productArrayList = new ArrayList<>();
     String url = "http://"+MainActivity.gobalURL+"/4210EA/online_shop/Products_php/retrieve.php";
     Product product;
