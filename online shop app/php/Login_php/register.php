@@ -12,7 +12,10 @@
         if($result->num_rows > 0){
             echo "failure";
         }else{
-            $sql = "insert into users values('','$name','$email','". md5($password) . "')";
+            // $sql = "INSERT INTO 'users' VALUES (NULL, '$name', '$email', '".md5($password)."')";
+            $sql="INSERT INTO `users` (`id`, `name`, `email`, `password`)
+            VALUES (NULL, '$name', '$email', '".md5($password)."')";
+
             if(!$connection->query($sql)){
                 echo "failure";
             }else{

@@ -16,6 +16,9 @@ include "connection.php";
 	$result['products'] = array();
 	$select= "SELECT *from products";
 	$responce = mysqli_query($connection,$select);
+
+    $upload_url='http://'.$server_ip.'/';
+	// echo $server_ip;
 	
 	while($row = mysqli_fetch_array($responce))
 		{
@@ -23,7 +26,7 @@ include "connection.php";
 			$index['title']    = $row['1'];
 			$index['describe']   = $row['2'];
 			$index['price'] = $row['3'];
-			$index['photo'] = $row['4'];
+			$index['photo'] = $upload_url.$row['4'];
 			$index['owner'] = $row['5'];
 			$index['phone'] = $row['6'];
 			
