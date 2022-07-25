@@ -1,4 +1,6 @@
-package com.example.online_shop;
+package com.example.online_shop.Login_Register;
+
+import static com.example.online_shop.URL.URL_REGISTER;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,6 +19,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.online_shop.MainActivity;
+import com.example.online_shop.R;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -26,7 +30,6 @@ public class Register extends AppCompatActivity {
     private EditText etName, etEmail, etPassword, etReenterPassword;
     private TextView tvStatus;
     private Button btnRegister;
-    private String URL = "http://"+MainActivity.gobalURL+"/4210EA/online_shop/Login_php/register.php";
     private String name, email, password, reenterPassword;
 
     @Override
@@ -52,7 +55,7 @@ public class Register extends AppCompatActivity {
             Toast.makeText(this,"Password Mismatch",Toast.LENGTH_SHORT).show();
         }
         else if (!name.equals("") && !email.equals("") && !password.equals("")){
-            StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_REGISTER, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
                     if (response.equals("success")) {

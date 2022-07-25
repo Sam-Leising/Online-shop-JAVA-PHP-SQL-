@@ -18,10 +18,10 @@
         <activity android:name=".Shopping_Cart_Activity">
 
         </activity>
-        <activity android:name=".Register" />
+        <activity android:name=".Login_Register.Register" />
         <activity android:name=".Product_Detail_Activity" />
         <activity android:name=".Product_Add_Activity" />
-        <activity android:name=".Login">
+        <activity android:name=".Login_Register.Login">
 
              <intent-filter>
              <action android:name="android.intent.action.MAIN" />

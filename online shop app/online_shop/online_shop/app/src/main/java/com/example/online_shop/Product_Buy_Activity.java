@@ -1,5 +1,7 @@
 package com.example.online_shop;
 
+import static com.example.online_shop.URL.URL_SHOPPING_ORDER;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -31,8 +33,6 @@ public class Product_Buy_Activity extends AppCompatActivity {
     ImageView txt_photo,back;
     TextView buyer_Name, buyer_Phone, buyer_Location;
     Button order_upload;
-
-    private static final String url="http://"+MainActivity.gobalURL+"/4210EA/online_shop/Shopping_carts_php/order.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +70,7 @@ public class Product_Buy_Activity extends AppCompatActivity {
         order_upload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    showNormalDialog();
+                showNormalDialog();
 //                insertData();
 //                finish();
             }
@@ -132,7 +132,7 @@ public class Product_Buy_Activity extends AppCompatActivity {
         final String Location=buyer_Location.getText().toString().trim();
 
 
-        StringRequest request=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+        StringRequest request=new StringRequest(Request.Method.POST, URL_SHOPPING_ORDER, new Response.Listener<String>() {
             @Override
             public void onResponse(String response)
             {

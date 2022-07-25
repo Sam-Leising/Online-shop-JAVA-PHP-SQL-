@@ -1,5 +1,7 @@
 package com.example.online_shop;
 
+import static com.example.online_shop.URL.URL_PRODUCT_UPLOAD;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -43,9 +45,6 @@ public class Product_Add_Activity extends AppCompatActivity {
     String encodeImageString;
     Button btn_insert;
     Button btnSelectImage;
-
-    private static final String url="http://"+MainActivity.gobalURL+"/4210EA/online_shop/Products_php/upload.php";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -175,7 +174,7 @@ public class Product_Add_Activity extends AppCompatActivity {
         final String Describe=describe.getText().toString().trim();
         final String Price=price.getText().toString().trim();
 
-        StringRequest request=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+        StringRequest request=new StringRequest(Request.Method.POST, URL_PRODUCT_UPLOAD, new Response.Listener<String>() {
             @Override
             public void onResponse(String response)
             {

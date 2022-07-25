@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="imageViewRounded">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <!--    text Style    -->
+    <style name="textStyle_Title_50dp">
+        <item name="android:textSize">50dp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="textStyle_28dp_bold">
+        <item name="android:textSize">28dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="textStyle_16dp">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="textStyle_12dp_gray">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+</resources>

@@ -1,5 +1,7 @@
 package com.example.online_shop;
 
+import static com.example.online_shop.URL.URL_PRODUCT_RETRIEVE;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -31,9 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
     ListView listView;
     MyAdapter adapter;
-    public static String gobalURL = "192.168.166.160";
     public static ArrayList<Product> productArrayList = new ArrayList<>();
-    String url = "http://"+MainActivity.gobalURL+"/4210EA/online_shop/Products_php/retrieve.php";
     Product product;
 
     BottomNavigationView bottomNavigationView;
@@ -106,8 +106,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void retrieveData(){
-
-        StringRequest request = new StringRequest(Request.Method.POST, url,
+        StringRequest request = new StringRequest(Request.Method.POST,URL_PRODUCT_RETRIEVE,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

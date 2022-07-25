@@ -6,7 +6,10 @@
     <color name="teal_200">#FF7A00</color>
     <color name="teal_700">#0000FF</color>
     <color name="black">#8888CF</color>
-    <color name="white">#D000FF</color>
+    <color name="white">#FFFFFF</color>
     <color name="colorPrimary">#FFFFFF</color>
     <color name="phoneHeader">#000000</color>
+    <color name="gray">#676767</color>
+    <color name="red">#AAFF0000</color>
+    <color name="primaryBackground">#FFB2D4DF</color>
 </resources>

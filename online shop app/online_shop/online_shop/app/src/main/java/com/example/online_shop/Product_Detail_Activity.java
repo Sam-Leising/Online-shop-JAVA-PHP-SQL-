@@ -1,8 +1,11 @@
 package com.example.online_shop;
 
+import static com.example.online_shop.URL.URL_SHOPPING_UPLOAD;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,8 +30,9 @@ public class Product_Detail_Activity extends AppCompatActivity {
     ImageView photo,back;
     Button addToCart,btn_buy;
     int position;
+    SharedPreferences USER_PREF;
+    private static final String SHARED_PREF_NAME = "currentUserPref";
 
-    private static final String url="http://"+MainActivity.gobalURL+"/4210EA/online_shop/Shopping_carts_php/upload.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +48,8 @@ public class Product_Detail_Activity extends AppCompatActivity {
         owner = findViewById(R.id.txt_owner);
         phone = findViewById(R.id.txt_phone);
         addToCart=(Button)findViewById(R.id.btn_addToCart);
+        USER_PREF = getSharedPreferences(SHARED_PREF_NAME,MODE_PRIVATE);
+
 
 
 
@@ -107,8 +113,9 @@ public class Product_Detail_Activity extends AppCompatActivity {
         final String txt_Photo=txt_photo.getText().toString().trim();
         final String Owner=owner.getText().toString().trim();
         final String Phone=phone.getText().toString().trim();
+        final String CurrentUser=USER_PREF.getString("currentUserEmail","email");
 
-        StringRequest request=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+        StringRequest request=new StringRequest(Request.Method.POST, URL_SHOPPING_UPLOAD, new Response.Listener<String>() {
             @Override
             public void onResponse(String response)
             {
@@ -139,6 +146,7 @@ public class Product_Detail_Activity extends AppCompatActivity {
                 map.put("photo",txt_Photo);
                 map.put("owner",Owner);
                 map.put("phone",Phone);
+                map.put("email",CurrentUser);
 
                 return map;
             }

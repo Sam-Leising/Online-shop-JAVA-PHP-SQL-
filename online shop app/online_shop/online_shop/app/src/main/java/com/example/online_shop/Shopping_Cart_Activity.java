@@ -1,5 +1,8 @@
 package com.example.online_shop;
 
+import static com.example.online_shop.URL.URL_SHOPPING_DELETE;
+import static com.example.online_shop.URL.URL_SHOPPING_RETRIEVE;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +11,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -39,11 +43,15 @@ public class Shopping_Cart_Activity extends AppCompatActivity {
     ListView listView;
     Shopping_Cart_Adapter adapter;
     public static ArrayList<Product> productArrayList = new ArrayList<>();
-    String url = "http://"+MainActivity.gobalURL+"/4210EA/online_shop/Shopping_carts_php/retrieve.php";
     Product product;
     BottomNavigationView bottomNavigationView;
     int Total;
     TextView txt_Total;
+    SharedPreferences USER_PREF;
+    private static final String SHARED_PREF_NAME = "currentUserPref";
+
+
+
 
 
     SwipeRefreshLayout swipeRefreshLayout;
@@ -58,6 +66,7 @@ public class Shopping_Cart_Activity extends AppCompatActivity {
         adapter = new Shopping_Cart_Adapter(this,productArrayList);
         listView.setAdapter(adapter);
         txt_Total = findViewById(R.id.txt_Total);
+        USER_PREF = getSharedPreferences("currentUserPref",MODE_PRIVATE);
 
         swipeRefreshLayout=findViewById(R.id.refresh);
         retrieveData();
@@ -157,7 +166,7 @@ public class Shopping_Cart_Activity extends AppCompatActivity {
 
     private void deleteData(final String id) {
 
-        StringRequest request = new StringRequest(Request.Method.POST, "http://"+MainActivity.gobalURL+"/4210EA/online_shop/Shopping_carts_php/delete.php",
+        StringRequest request = new StringRequest(Request.Method.POST, URL_SHOPPING_DELETE,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -197,8 +206,8 @@ public class Shopping_Cart_Activity extends AppCompatActivity {
 
 
     public void retrieveData(){
-
-        StringRequest request = new StringRequest(Request.Method.POST, url,
+        final String email = USER_PREF.getString("currentUserEmail","email");
+        StringRequest request = new StringRequest(Request.Method.POST, URL_SHOPPING_RETRIEVE,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -251,7 +260,15 @@ public class Shopping_Cart_Activity extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(Shopping_Cart_Activity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
-        });
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> map = new HashMap<>();
+                System.out.println("upload current user email"+email);
+                map.put("email",email);
+                return map;
+            }
+        };
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(request);

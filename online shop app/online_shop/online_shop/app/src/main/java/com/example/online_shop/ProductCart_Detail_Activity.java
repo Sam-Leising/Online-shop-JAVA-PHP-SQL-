@@ -1,5 +1,7 @@
 package com.example.online_shop;
 
+import static com.example.online_shop.URL.URL_SHOPPING_UPLOAD;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -28,8 +30,6 @@ public class ProductCart_Detail_Activity extends AppCompatActivity {
     ImageView photo,back;
     Button addToCart,btn_buy;
     int position;
-
-    private static final String url="http://"+MainActivity.gobalURL+"/4210EA/online_shop/Shopping_carts_php/upload.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,7 +110,7 @@ public class ProductCart_Detail_Activity extends AppCompatActivity {
         final String Owner=owner.getText().toString().trim();
         final String Phone=phone.getText().toString().trim();
 
-        StringRequest request=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+        StringRequest request=new StringRequest(Request.Method.POST, URL_SHOPPING_UPLOAD, new Response.Listener<String>() {
             @Override
             public void onResponse(String response)
             {
