@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 
 import com.example.online_shop.Product;
 import com.example.online_shop.R;
+import com.example.online_shop.URL;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -45,7 +46,7 @@ public class Shopping_Cart_Adapter extends ArrayAdapter<Product> {
 
         Picasso
                 .with(context)
-                .load(arrayListProducts.get(position).getPhoto())
+                .load("http://"+ URL.IP+"/"+arrayListProducts.get(position).getPhoto())
                 .into(Product_Photo);
 
         return view;

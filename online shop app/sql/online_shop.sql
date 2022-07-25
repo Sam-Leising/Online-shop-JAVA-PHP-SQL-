@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： localhost
--- 產生時間： 2022 年 07 月 25 日 18:31
+-- 產生時間： 2022 年 07 月 25 日 19:38
 -- 伺服器版本： 10.4.21-MariaDB
 -- PHP 版本： 7.4.27
 
@@ -87,12 +87,11 @@ CREATE TABLE `shopping_carts` (
 --
 
 INSERT INTO `shopping_carts` (`id`, `title`, `describe`, `price`, `photo`, `owner`, `phone`, `email`) VALUES
-(8, 'Winona Su-Sensitive Moisturizi', 'Moisturizing | Repair the dama', '123', 'http://192.168.141.160/4210EA/online_shop/Products_php/images/d.jpg', 'sam', '12345678', 'sam@gmail.com'),
-(9, 'Winona Su-Sensitive Moisturizi', 'Moisturizing | Repair the dama', '123', 'http://192.168.141.160/4210EA/online_shop/Products_php/images/d.jpg', 'sam', '12345678', 'ulric@gmail.com'),
-(10, 'OLAY OLAY', 'moisturizing | oil-control', '474', 'http://192.168.141.160/4210EA/online_shop/Products_php/images/e.jpg', 'sam', '12345678', 'ulric@gmail.com'),
-(11, 'Avene Soothing Special Care Mo', 'Moisturize | Whitening | Japan', '48', 'http://192.168.141.160/4210EA/online_shop/Products_php/images/b.jpg', 'sam', '12345678', 'sam@gmail.com'),
-(12, 'Nature Hall Mens Glacier Mois', 'moisturizing', '456', 'http://192.168.141.160/4210EA/online_shop/Products_php/images/f.jpg', 'sam', '12345678', 'sam@gmail.com'),
-(13, 'Nature Hall Mens Glacier Mois', 'moisturizing', '456', 'http://192.168.141.160/4210EA/online_shop/Products_php/images/f.jpg', 'sam', '12345678', 'sam@gmail.com');
+(15, 'Winona Su-Sensitive Moisturizi', 'Moisturizing | Repair the dama', '123', '4210EA/online_shop/Products_php/images/d.jpg', 'sam', '12345678', 'sam@gmail.com'),
+(16, 'OLAY OLAY', 'moisturizing | oil-control', '474', '4210EA/online_shop/Products_php/images/e.jpg', 'sam', '12345678', 'sam@gmail.com'),
+(17, 'Winona Su-Sensitive Moisturizi', 'Moisturizing | Repair the dama', '123', '4210EA/online_shop/Products_php/images/d.jpg', 'sam', '12345678', 'ulric@gmail.com'),
+(18, 'Avene Soothing Special Care Mo', 'Moisturize | Whitening | Japan', '48', '4210EA/online_shop/Products_php/images/b.jpg', 'sam', '12345678', 'sam@gmail.com'),
+(19, 'baby bird', 'Repair Moisturizing | Moisturi', '38', '4210EA/online_shop/Products_php/images/a.jpg', 'sam', '12345678', 'ulric@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -163,7 +162,7 @@ ALTER TABLE `products`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `shopping_carts`
 --
 ALTER TABLE `shopping_carts`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `users`

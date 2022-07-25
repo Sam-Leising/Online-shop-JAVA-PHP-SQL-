@@ -6,7 +6,7 @@
 
     $arp=`arp -a`;
 	// $server_ip = substr($arp , 70 , 15);
-    $server_ip = '192.168.166.160';
+    $server_ip = '192.168.141.160';
     // echo $arp;
     
     $connection=new mysqli($host,$username,$password,$dbname);

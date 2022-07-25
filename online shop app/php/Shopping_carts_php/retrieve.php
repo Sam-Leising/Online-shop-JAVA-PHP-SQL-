@@ -11,10 +11,10 @@
 include "connection.php";
 
 	// $connection = mysqli_connect("localhost","id11477192_arsltech","12345678","id11477192_employee_management_system");
-	
+	$email = $_POST['email'];
 	$result = array();
 	$result['shopping_carts'] = array();
-	$select= "SELECT *from shopping_carts";
+	$select= "SELECT *from shopping_carts WHERE email = '$email'";
 	$responce = mysqli_query($connection,$select);
 	
 	while($row = mysqli_fetch_array($responce))

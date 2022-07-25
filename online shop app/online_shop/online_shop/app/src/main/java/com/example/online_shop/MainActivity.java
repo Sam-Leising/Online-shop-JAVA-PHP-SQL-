@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -28,6 +30,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
     MyAdapter adapter;
     public static ArrayList<Product> productArrayList = new ArrayList<>();
     Product product;
+    SharedPreferences IP_PREF;
+    private static final String SHARED_PREF_NAME2 = "IPPref";
 
     BottomNavigationView bottomNavigationView;
 
@@ -49,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
         listView = findViewById(R.id.myListView);
         adapter = new MyAdapter(this,productArrayList);
         listView.setAdapter(adapter);
+        IP_PREF = getSharedPreferences(SHARED_PREF_NAME2,MODE_PRIVATE);
+
 
 
         swipeRefreshLayout=findViewById(R.id.refresh);
@@ -132,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
                                     String photo = object.getString("photo");
                                     String owner = object.getString("owner");
                                     String phone = object.getString("phone");
+                                    System.out.println("photo url: "+photo);
 
                                     product = new Product(id,title,describe,price,photo,owner,phone);
                                     productArrayList.add(product);
@@ -152,7 +161,14 @@ public class MainActivity extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(MainActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
-        });
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> map = new HashMap<>();
+                map.put("ip",IP_PREF.getString("ipAddress",URL.IP));
+                return map;
+            }
+        };
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(request);

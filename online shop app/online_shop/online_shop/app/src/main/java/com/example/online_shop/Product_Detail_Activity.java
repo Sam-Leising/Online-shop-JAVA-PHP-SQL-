@@ -99,7 +99,7 @@ public class Product_Detail_Activity extends AppCompatActivity {
         phone.setText(MainActivity.productArrayList.get(position).getPhone());
         Picasso
                 .with(Product_Detail_Activity.this)
-                .load(MainActivity.productArrayList.get(position).getPhoto())
+                .load("http://"+URL.IP+"/"+MainActivity.productArrayList.get(position).getPhoto())
                 .into(photo);
 
     }

@@ -264,7 +264,6 @@ public class Shopping_Cart_Activity extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> map = new HashMap<>();
-                System.out.println("upload current user email"+email);
                 map.put("email",email);
                 return map;
             }
