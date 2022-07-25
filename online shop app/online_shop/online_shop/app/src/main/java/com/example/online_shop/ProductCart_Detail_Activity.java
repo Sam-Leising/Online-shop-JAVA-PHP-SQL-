@@ -95,7 +95,7 @@ public class ProductCart_Detail_Activity extends AppCompatActivity {
         phone.setText(Shopping_Cart_Activity.productArrayList.get(position).getPhone());
         Picasso
                 .with(ProductCart_Detail_Activity.this)
-                .load(Shopping_Cart_Activity.productArrayList.get(position).getPhoto())
+                .load("http://"+URL.IP+"/"+Shopping_Cart_Activity.productArrayList.get(position).getPhoto())
                 .into(photo);
 
     }
