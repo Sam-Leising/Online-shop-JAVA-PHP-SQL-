@@ -159,7 +159,18 @@ public class MainActivity extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(MainActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                /*
+                https://so.muouseo.com/qa/ve5oqgmym6oj.html
+                在 android 11（API 级别 30）中 Compatibility.isChangeEnabled(CHANGE_TEXT_TOASTS_IN_THE_SYSTEM)
+                将在 Toast 类 show() 方法中返回 true，对于 android 11，如 android developer site 中所述
+
+                现在，如果您想跳过此异常，请不要在 Toast null 的消息参数中传递 Toast.makeText(applicationContext,
+                obj.getString("message"),Toast.LENGTH_LONG).show() 此处您的 obj.getString("message") 在某些情况下为空，
+                因此您检查 null 然后显示 Toast 如下
+                 */
+                if (error!=null && error.getMessage()!=null) {
+                    Toast.makeText(MainActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                }else {retrieveData();}
             }
         }){
             @Override
